@@ -7,8 +7,8 @@ context = {
     #      when commented out - it works locally
     #process.exit 0
     #throw new Error("Exit lambda")
-    #setTimeout (-> process.exit 1), 1000
-    #process.nextTick (-> process.exit 1)
+    #setTimeout (-> process.exit 0), 1000
+    #process.nextTick (-> process.exit 0)
     return 
 }
 
