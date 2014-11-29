@@ -32,8 +32,11 @@ or same thing with mosquitto CLI client:
 
 ``` bash
 mosquitto_sub -h test.mosquitto.org -t '#' -v
+...
+<topic> <value>
+...
+CTRL-C
 ```
-
 
 You should receive a bunch of messages. Press CTRL-C to kill the client.
 
