@@ -88,11 +88,11 @@ You should receive the message in the first terminal.
 Testing lambda function locally (using CoffeeScript):
 
 ``` bash
-coffee index.coffee
+coffee index_test.coffee
 ```
 
 or using Javascript:
 
 ``` bash
-node index.js
+node index_test.js
 ```
