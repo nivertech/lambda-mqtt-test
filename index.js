@@ -6,23 +6,20 @@ mqtt = require('mqtt');
 console.log("Loading event");
 
 exports.handler = function(event, context) {
-  var client, i, _i;
+  var client;
   console.log("event =\n", event);
   client = mqtt.connect("mqtt://test.mosquitto.org:1883");
   console.log("after mqtt.connect()");
-  for (i = _i = 1; _i <= 1000; i = ++_i) {
-    console.log("before client.publish() ", i);
-    client.publish(event.topic, event.value, {
-      retain: (event.retain != null) && event.retain
-    });
-    console.log("after client.publish()", i);
-  }
+  client.publish(event.topic, event.value, {
+    retain: (event.retain != null) && event.retain
+  });
+  console.log("after client.publish()");
   client.end();
-  console.log("after cleint.end()");
+  console.log("after client.end()");
   client.on("close", (function() {
     return context.done(null, "SUCCESS");
   }));
   client.on("error", (function() {
-    return context.done(null, "SUCCESS");
+    return context.done(null, "ERROR");
   }));
 };

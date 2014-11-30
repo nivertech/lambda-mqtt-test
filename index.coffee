@@ -13,7 +13,7 @@ exports.handler = (event, context) ->
   console.log "after client.publish()"
 
   client.end()
-  console.log "after cleint.end()"
+  console.log "after client.end()"
 
   client.on "close", (-> context.done null, "SUCCESS")
   client.on "error", (-> context.done null, "ERROR")
