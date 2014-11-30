@@ -18,6 +18,6 @@ exports.handler = (event, context) ->
   console.log "after cleint.end()"
 
   client.on "close", (-> context.done null, "SUCCESS")
-  client.on "error", (-> context.done null, "SUCCESS")
+  client.on "error", (-> context.done null, "ERROR")
 
   return
