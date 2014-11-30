@@ -6,6 +6,7 @@ handler = require('./index').handler;
 context = {
   done: function(cb, result) {
     console.log("DONE: ", result);
+    process.exit(0);
   }
 };
 

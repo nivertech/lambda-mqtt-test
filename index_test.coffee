@@ -5,10 +5,7 @@ context = {
     console.log "DONE: ", result
     #NOTE: with process.exit 0 - even locally it doesn't work - probably the same thing happens on Lambda
     #      when commented out - it works locally
-    #process.exit 0
-    #throw new Error("Exit lambda")
-    #setTimeout (-> process.exit 0), 1000
-    #process.nextTick (-> process.exit 0)
+    process.exit 0
     return 
 }
 

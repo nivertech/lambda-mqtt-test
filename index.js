@@ -19,5 +19,10 @@ exports.handler = function(event, context) {
   }
   client.end();
   console.log("after cleint.end()");
-  context.done(null, "SUCCESS");
+  client.on("close", (function() {
+    return context.done(null, "SUCCESS");
+  }));
+  client.on("error", (function() {
+    return context.done(null, "SUCCESS");
+  }));
 };

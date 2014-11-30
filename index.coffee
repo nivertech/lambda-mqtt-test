@@ -6,7 +6,6 @@ exports.handler = (event, context) ->
   console.log "event =\n", event
 
   client = mqtt.connect("mqtt://test.mosquitto.org:1883")
-  #console.log "after mqtt.connect(), client = ", client
   console.log "after mqtt.connect()"
 
   for i in [1..1000]
@@ -18,6 +17,7 @@ exports.handler = (event, context) ->
   client.end()
   console.log "after cleint.end()"
 
-  context.done null, "SUCCESS"
-  #setTimeout (-> context.done null, "SUCCESS"), 2000
+  client.on "close", (-> context.done null, "SUCCESS")
+  client.on "error", (-> context.done null, "SUCCESS")
+
   return
