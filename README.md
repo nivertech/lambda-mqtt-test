@@ -10,7 +10,7 @@ AWS Lambda which function as a brdge between custom events and MQTT Broker.
     - http://aws.amazon.com/lambda/
 - AWS CLI tools
     - http://docs.aws.amazon.com/cli/latest/userguide/installing.html
-    Or on Linux or OSX this probably will do the job:
+    - on Linux or OSX this probably will do the job:
     ``` bash
     sudo easy_install pip
     sudo pip install awscli
