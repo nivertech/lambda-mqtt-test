@@ -2,6 +2,21 @@
 
 AWS Lambda which function as a brdge between custom events and MQTT Broker.
 
+### Dependencies
+
+- AWS account
+    - http://aws.amazon.com/
+- AWS Lambda service is currently in preview, so you need to be whitelisted to use it:
+    - http://aws.amazon.com/lambda/
+- AWS CLI tools
+    - http://docs.aws.amazon.com/cli/latest/userguide/installing.html
+    Or on Linux or OSX this probably will do the job:
+    ``` bash
+    sudo easy_install pip
+    sudo pip install awscli
+    ```
+
+
 We use this public MQTT broker for testing:
 - http://test.mosquitto.org/
 
@@ -74,9 +89,9 @@ The lambda function expects custom events like this (see `event-mqtt.json` file)
 
 ``` json
 {
-	"topic": "my-topic",
-	"value": "hello, lambda!",
-	"retain": false
+    "topic": "my-topic",
+    "value": "hello, lambda!",
+    "retain": false
 }
 ```
 
